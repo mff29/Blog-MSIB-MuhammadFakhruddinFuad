@@ -6,13 +6,13 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
                <ul class="navbar-nav">
-                    <li class="nav-item {{ request()->is('home') ? 'active' : '' }}">
+                    <li class="nav-item">
                          <a class="nav-link" aria-current="page" href="/home">Home</a>
                     </li>
-                    <li class="nav-item {{ request()->is('kategori') ? 'active' : '' }}">
+                    <li class="nav-item">
                          <a class="nav-link" href="/kategori">Kategori</a>
                     </li>
-                    <li class="nav-item {{ request()->is('post') ? 'active' : '' }}">
+                    <li class="nav-item">
                          <a class="nav-link" href="/post">Post</a>
                     </li>
                     <li class="nav-item">
