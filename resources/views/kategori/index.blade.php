@@ -8,7 +8,7 @@
                </div>
 
                <div class="card-body">
-                    <a href="/kategori/create" class="btn btn-primary">Tambah</a>
+                    <a href="/kategori/create" class="btn btn-primary"><i class="bi bi-plus"></i> Tambah</a>
                     <hr>
                     @include('alert')
                     <div class="table-responsive">
