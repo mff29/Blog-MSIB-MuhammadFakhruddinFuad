@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('post', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('title');
-            $table->string('content');
+            $table->text('content');
             $table->string('img')->nullable();
             $table->string('status');
             $table->uuid('kategori_id');
