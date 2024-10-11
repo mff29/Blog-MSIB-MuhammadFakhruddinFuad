@@ -1,22 +1,27 @@
 @extends('layout.app')
-@section('title', 'Kategori')
+@section('title', 'Posts')
 @section('content')
      <div class="container">
           <div class="card">
-               <div class="card-header m-0">
-                    <h3 class="text-center">DATA KATEGORI</h3>
+               <div class="card-header">
+                    <h3 class="text-center m-0">DATA POSTS</h3>
                </div>
 
                <div class="card-body">
-                    <a href="/kategori/create" class="btn btn-primary"><i class="bi bi-plus"></i> Tambah</a>
+                    <a href="/post/create" class="btn btn-primary"><i class="bi bi-plus"></i> Tambah</a>
                     <hr>
                     @include('alert')
                     <div class="table-responsive">
-                         <table class="table table-bordered table-striped" id="kategori-table">
+                         <table class="table table-bordered table-striped" id="post-table">
                               <thead>
                                    <tr>
                                         <th width="10">No</th>
-                                        <th>Deskripsi</th>
+                                        <th>img</th>
+                                        <th>Title</th>
+                                        <th>Author</th>
+                                        <th>Kategori</th>
+                                        <th>Content</th>
+                                        <th>Status</th>
                                         <th width="115">#</th>
                                    </tr>
                               </thead>
@@ -31,13 +36,18 @@
 @push('scripts')
 <script type="text/javascript">
      $(function () {
-          $('#kategori-table').DataTable({
+          $('#post-table').DataTable({
                processing: true,
                serverSide: true,
-               ajax: "/kategori",
+               ajax: "/post",
                columns: [
                     {data: 'DT_RowIndex', orderable: false, searchable: false},
-                    {data: 'deskripsi', name: 'deskripsi'},
+                    {data: 'img', name: 'img', orderable: false, searchable: false},
+                    {data: 'title', name: 'title'},
+                    {data: 'user.name', name: 'user.name'},
+                    {data: 'kategori.deskripsi', name: 'kategori.deskripsi'},
+                    {data: 'content', name: 'content'},
+                    {data: 'status', name: 'status'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                ]
           });
@@ -59,7 +69,7 @@
                     $.ajax({
                          type: "DELETE",
                          data:{ _token: '{{ csrf_token() }}' },
-                         url: "/kategori/" + dataId,
+                         url: "/post/" + dataId,
                          success: function(response) {
                          Swal.fire({
                               title: 'Sukses',

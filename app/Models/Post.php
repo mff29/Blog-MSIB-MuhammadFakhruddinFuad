@@ -11,13 +11,13 @@ class Post extends Model
 {
     use HasFactory, Uuids, SoftDeletes;
 
-    protected $table = "kategori";
-    protected $fillable = ['deskripsi'];
+    protected $table = "post";
+    protected $fillable = ['title','content','img','status','kategori_id','created_by'];
 
     public function kategori(){
         return $this->belongsTo(\App\Models\Kategori::class);
     }
     public function user(){
-        return $this->belongsTo(\App\Models\User::class);
+        return $this->belongsTo(\App\Models\User::class, 'created_by');
     }
 }

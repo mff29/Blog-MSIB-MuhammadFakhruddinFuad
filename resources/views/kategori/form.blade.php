@@ -1,4 +1,4 @@
-<div class="div1">
+<div class="mb-3">
      <label class="form-label" for="deskripsi">Deskripsi</label>
      <input type="text" name="deskripsi" placeholder="Deskripsi / Nama Kategori" class="form-control" value="{{ old('name', $kategori->deskripsi ?? '') }}" required>
 </div>

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('title');
             $table->string('content');
-            $table->string('img');
+            $table->string('img')->nullable();
             $table->string('status');
             $table->uuid('kategori_id');
             $table->uuid('created_by');

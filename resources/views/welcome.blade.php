@@ -72,8 +72,8 @@
                     </header>
 
                     <main class="mt-6">
-                        <h3 class="text-center" style="margin-bottom: 50px; color: #fff;">TUGAS CRUD WAREHOUSE MSIB - MUHAMMAD FAKHRUDDIN FU'AD<br>
-                            <a href="/gudang" class="blink">Klik Disini!</a>
+                        <h3 class="text-center" style="margin-bottom: 50px; color: #fff;">TUGAS CRUD BLOG MSIB - MUHAMMAD FAKHRUDDIN FU'AD<br>
+                            <a href="/home" class="blink">Klik Disini!</a>
                         </h3>
 
                         <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">

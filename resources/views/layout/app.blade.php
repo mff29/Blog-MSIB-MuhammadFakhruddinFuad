@@ -24,7 +24,7 @@
 
           @include('layout.navbar')
 
-          <div class="container mt-4">
+          <div class="container mt-4 mb-4">
                @yield('content')
           </div>
 
