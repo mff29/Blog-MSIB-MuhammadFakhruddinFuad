@@ -26,7 +26,7 @@ class PostController extends Controller
             })
             ->addColumn('action', function ($row) {
                 $btn = "<a href='/post/" . $row->id . "/edit' class='btn btn-danger btn-sm ' style='margin-right:5px'><i class='bi bi-pencil-square'></i></a>";
-                $btn .= "<a href='/post/" . $row->id . "' class='btn btn-danger btn-sm ' style='margin-right:5px'><i class='bi bi-eye'></i></a>";
+                // $btn .= "<a href='/post/" . $row->id . "' class='btn btn-danger btn-sm ' style='margin-right:5px'><i class='bi bi-eye'></i></a>";
                 $btn .= '<button type="button" onclick="alert_delete(\'' . $row->id . '\')" class="btn btn-danger btn-sm"><i class="bi bi-trash-fill"></i></button>';
                 return $btn;
             })

@@ -72,7 +72,7 @@
                     </header>
 
                     <main class="mt-6">
-                        <h3 class="text-center" style="margin-bottom: 50px; color: #fff;">TUGAS CRUD BLOG MSIB - MUHAMMAD FAKHRUDDIN FU'AD<br>
+                        <h3 class="text-center" style="margin-bottom: 50px; color: #fff;">TUGAS BLOG MSIB - MUHAMMAD FAKHRUDDIN FU'AD<br>
                             <a href="/home" class="blink">Klik Disini!</a>
                         </h3>
 

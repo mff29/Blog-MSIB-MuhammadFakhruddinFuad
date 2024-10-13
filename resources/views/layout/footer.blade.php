@@ -1,7 +1,3 @@
-{{-- <footer class="footer text-center m-0 p-0 fixed-bottom">
-     
-
-</footer> --}}
 <footer class="footer text-center" style="border-top: 1px solid #000;">
      <div class="container">
           <span>Created &copy; 2024 Muhammad Fakhruddin Fu'ad</span>

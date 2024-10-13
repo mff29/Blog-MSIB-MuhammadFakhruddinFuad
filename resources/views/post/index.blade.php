@@ -1,7 +1,6 @@
 @extends('layout.app')
 @section('title', 'Posts')
 @section('content')
-     <div class="container">
           <div class="card">
                <div class="card-header">
                     <h3 class="text-center m-0">DATA POSTS</h3>
@@ -22,7 +21,7 @@
                                         <th>Kategori</th>
                                         <th>Content</th>
                                         <th>Status</th>
-                                        <th width="115">#</th>
+                                        <th width="75">#</th>
                                    </tr>
                               </thead>
                          </table>
@@ -30,7 +29,6 @@
                </div>
 
           </div>
-     </div>
 @endsection
 
 @push('scripts')
@@ -46,10 +44,34 @@
                     {data: 'title', name: 'title'},
                     {data: 'user.name', name: 'user.name'},
                     {data: 'kategori.deskripsi', name: 'kategori.deskripsi'},
-                    {data: 'content', name: 'content'},
-                    {data: 'status', name: 'status'},
+                    {data: 'content', name: 'content',
+                    class: 'content-preview',
+                    render: function (data, type, row) {
+                              return '<div class="content-preview">' + data + '</div><a href="#" class="expand-content">Lihat Selengkapnya</a>';
+                         }},
+                    {data: 'status', name: 'status',
+                         render: function(data, type, row) {
+                              if (data === 'published') {
+                              return '<p class="text-center"><span class="badge bg-success text-center">published</span></p>';
+                              } else {
+                              return '<p class="text-center"><span class="badge bg-secondary text-center">' + data + '</span></p>';
+                              }
+                         }
+                    },
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                ]
+          });
+
+          $(document).on('click', '.expand-content', function(e) {
+               e.preventDefault();
+               var content = $(this).prev('.content-preview');
+               if (content.hasClass('expanded')) {
+                    content.removeClass('expanded').css({'display': '-webkit-box'});
+                    $(this).text('Lihat Selengkapnya');
+               } else {
+                    content.addClass('expanded').css({'display': 'block'});
+                    $(this).text('Tutup');
+               }
           });
      });
 
@@ -94,4 +116,32 @@
      }
 </script>
 
+@endpush
+
+@push('css')
+<style>
+     .content-preview {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+     }
+
+     .content-preview.expanded {
+          display: block;
+          white-space: normal;
+     }
+
+     .expand-content {
+          color: #007bff;
+          cursor: pointer;
+          font-size: 14px;
+          text-decoration: none;
+     }
+
+     .expand-content:hover {
+          text-decoration: underline;
+     }
+</style>
 @endpush

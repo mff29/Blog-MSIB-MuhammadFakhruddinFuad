@@ -1,7 +1,6 @@
 @extends('layout.app')
 @section('title', 'Edit POST')
 @section('content')
-<div class="container">
      <div class="card">
           <div class="card-header">
                <h3 class="text-center">EDIT DATA POST</h3>
@@ -25,5 +24,4 @@
                </form>
           </div>
      </div>
-</div>
 @endsection

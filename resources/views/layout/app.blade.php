@@ -14,9 +14,18 @@
           <!-- SweetAlert -->
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
+          @stack('css')
+
           <style>
-               body{
+               body {
                     font-size: 0.9em;
+                    display: flex;
+                    flex-direction: column;
+                    min-height: 100vh;
+               }
+
+               .container {
+                    flex: 1;
                }
           </style>
      </head>
@@ -24,7 +33,7 @@
 
           @include('layout.navbar')
 
-          <div class="container mt-4 mb-4">
+          <div class="container mt-2">
                @yield('content')
           </div>
 

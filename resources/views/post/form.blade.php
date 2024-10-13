@@ -37,7 +37,11 @@
 </div>
 <div class="mb-3">
      <label class="form-label" for="status">Status</label>
-     <input type="text" name="status" placeholder="Status" class="form-control" value="{{ old('status', isset($post) ? $post->status : '') }}" required>
+     <select name="status" class="form-control" required>
+          <option value="" disabled {{ old('status', isset($post) ? $post->status : '') == '' ? 'selected' : '' }}>Pilih status...</option>
+          <option value="draft" {{ old('status', isset($post) ? $post->status : '') == 'draft' ? 'selected' : '' }}>draft</option>
+          <option value="published" {{ old('status', isset($post) ? $post->status : '') == 'published' ? 'selected' : '' }}>published</option>
+     </select>
 </div>
 <div class="mt-3">
      <button type="submit" class="btn btn-success"><i class="bi bi-floppy"></i> Simpan</button>
