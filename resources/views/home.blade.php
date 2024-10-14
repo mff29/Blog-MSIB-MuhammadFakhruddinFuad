@@ -1,6 +1,7 @@
 @extends('layout.app')
 @section('title', 'Home')
 @section('content')
+@include('alert')
      <h1 class="text-center p-3">Blog MSIB - Fu'ad</h1>
      <div class="row">
           @if (count($posts) > 0)
@@ -15,7 +16,6 @@
                                    @endif
 
                                    <div>
-                                        {{-- <h6><a href="{{ route('post.show', $post->id) }}">{{ $post->title }}</a></h6> --}}
                                         <h5>{{ $post->title }}</a></h5>
                                         <p>in category {{ $post->kategori->deskripsi }}</p>
                                         <p>author: {{ ucfirst($post->user->name) }}</p>
