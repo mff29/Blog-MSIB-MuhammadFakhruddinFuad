@@ -6,6 +6,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/post/{id}', [App\Http\Controllers\PostController::class, 'show']);
 
 Route::middleware('guest')->group(function () {
     Route::get('/register', [App\Http\Controllers\AuthController::class, 'showRegister'])->name('register.form');
