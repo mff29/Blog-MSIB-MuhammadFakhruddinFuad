@@ -1,5 +1,5 @@
 <div class="mb-3">
-     <label class="form-label" for="created_by">Kategori</label>
+     <label class="form-label" for="created_by">Author</label>
      <select name="created_by" class="form-control" required>
           <option value="" disabled {{ old('created_by', isset($post) ? $post->created_by : '') == '' ? 'selected' : '' }}>Pilih author....</option>
           @foreach ($user as $u)
