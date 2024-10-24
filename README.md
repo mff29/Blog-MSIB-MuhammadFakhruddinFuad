@@ -9,7 +9,7 @@
 
 ## About Laravel 10
 
-dibuat menggunakan:
+### Dibuat oleh Muhammad Fakhruddin Fu'ad menggunakan:
 - laravel 10
 - spatie
 - yajra datatables
