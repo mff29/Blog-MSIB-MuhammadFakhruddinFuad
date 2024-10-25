@@ -14,6 +14,7 @@
             <li class="nav-item">
               <a class="nav-link {{ request()->is('artikel') ? 'active' : '' }}" href="/artikel">Artikel</a>
             </li>
+          @if (Auth::check())
             @if (Auth::user()->hasRole('admin'))
               <li class="nav-item">
                 <a class="nav-link {{ request()->is('kategori') ? 'active' : '' }}" href="/kategori">Kategori</a>
@@ -32,6 +33,7 @@
                 <a class="nav-link {{ request()->is('post') ? 'active' : '' }}" href="/post">Post</a>
               </li>
             @endif
+          @endif
           </ul>
 
             <div class="profile">

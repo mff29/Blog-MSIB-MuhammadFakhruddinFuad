@@ -2,10 +2,8 @@
 @section('title', 'Artikel')
 @section('content')
 @include('alert')
-     <h1 class="text-center p-3">BACA ARTIKEL</h1>
+     <h3 class="text-center p-3">BACA ARTIKEL</h3>
      <hr>
-
-     <!-- Form Pencarian -->
      <form action="{{ route('artikel.index') }}" method="GET" class="mb-3 d-flex align-items-center" style="max-width: 500px;">
           <div class="me-2 flex-grow-1">
                <select name="kategori" class="form-select" aria-label="Filter by Category">
